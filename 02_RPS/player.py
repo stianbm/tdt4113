@@ -1,10 +1,10 @@
 """The general class for the different kinds of RPS players"""
 
-class Player(object):
+
+class Player:
 
     def __init__(self, name):
         self.name = name
-
 
     def chose_action(self):
         return True
