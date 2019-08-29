@@ -13,7 +13,7 @@ class Player:
         """Chose the action, possibly based on history"""
 
     @abstractmethod
-    def receive_result(self, value1, value2):
+    def receive_result(self, action1, action2):
         """Receive result of game, possibly commit to memory"""
 
     def get_name(self):

@@ -30,12 +30,12 @@ class SingleGame:
             value2 += 0.5
             self.winner = "no-one"
 
-        self.player1.receive_result(value1, value2)
-        self.player2.receive_result(value2, value1)
+        self.player1.receive_result(self.action1, self.action2)
+        self.player2.receive_result(self.action2, self.action1)
 
         self.__str__()
 
-        return value1, value2
+        return value1
 
     def __str__(self):
         """Represents the single game as text"""

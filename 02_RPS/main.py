@@ -1,17 +1,21 @@
 """The main file that starts it all..."""
 
-from single_game import SingleGame
-from players import RandomPlayer
+from many_games import ManyGames
+from players import *
 
 
 def main():
     """Main method used to call the other classes"""
     print("START")
 
-    player1 = RandomPlayer()
+    player1 = MostCommon()
     player2 = RandomPlayer()
-    game = SingleGame(player1, player2)
-    game.execute_game()
+    game = ManyGames(player1, player2, 100)
+    game.play_tournament()
+
+def menu():
+    pass
+    #TODO
 
 
 if __name__ == "__main__":
