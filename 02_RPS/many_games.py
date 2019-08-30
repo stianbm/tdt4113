@@ -33,4 +33,6 @@ class ManyGames:
     def print_plot(self):
         """Prints result for player1 using matplot"""
         matplotlib.pyplot.plot(self.x_axis, self.player1_points_mean)
+        matplotlib.pyplot.title(self.player1.get_name())
+        matplotlib.pyplot.hlines(0.5, 1, self.number_of_games)
         matplotlib.pyplot.show()

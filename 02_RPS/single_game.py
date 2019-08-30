@@ -42,11 +42,11 @@ class SingleGame:
         print(
             self.player1.get_name() +
             ": " +
-            self.action1 +
+            self.action1.action_type +
             ".  " +
             self.player2.get_name() +
             ": " +
-            self.action2 +
+            self.action2.action_type +
             ".  " +
             self.winner +
             " wins")

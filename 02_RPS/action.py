@@ -18,12 +18,13 @@ class Action:
 
     def __lt__(self, other):
         if self.action_type == self.ROCK:
-            if other.actionType == self.PAPER:
+            if other.action_type == self.PAPER:
                 return True
         elif self.action_type == self.PAPER:
-            if other.actionType == self.SCISSORS:
+            if other.action_type == self.SCISSORS:
                 return True
         elif self.action_type == self.SCISSORS:
-            if other.actionType == self.ROCK:
+            if other.action_type == self.ROCK:
+
                 return True
         return False
