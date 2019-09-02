@@ -84,6 +84,7 @@ class Historian(Player):
     def receive_result(self, action1, action2):
         """Add last action of opponent to string of actions"""
         self.all_actions.append(action2)
+        print("action2: ", action2, action2.action_type)
         if len(self.actions) > self.action_depth - 1:
             del self.actions[0]
         self.actions.append(action2)
@@ -99,13 +100,14 @@ class Historian(Player):
         i = 0
         while i < (len(self.all_actions) - (self.action_depth + 1)):
             for j in range(self.action_depth):
-                if self.actions[j] == self.all_actions[i]:
+                if self.actions[j].action_type == self.all_actions[i + j].action_type:
                     if j == (self.action_depth - 1):
-                        if self.all_actions[i + self.action_depth] == Action.ROCK:
+                        if self.all_actions[i +
+                                            self.action_depth].action_type == Action.ROCK:
                             paper_vote += 1
-                        elif self.all_actions[i + self.action_depth] == Action.PAPER:
+                        elif self.all_actions[i + self.action_depth].action_type == Action.PAPER:
                             scissors_vote += 1
-                        elif self.all_actions[i + self.action_depth] == Action.SCISSORS:
+                        elif self.all_actions[i + self.action_depth].action_type == Action.SCISSORS:
                             rock_vote += 1
                 else:
                     break
@@ -113,6 +115,8 @@ class Historian(Player):
 
         # If no instances are found, pick a random
         if rock_vote == 0 and paper_vote == 0 and scissors_vote == 0:
+            print("Random")
+            print(rock_vote, paper_vote, scissors_vote)
             return Action(Action.action_types[random.randint(0, 2)])
 
         # Chose most common of previous actions

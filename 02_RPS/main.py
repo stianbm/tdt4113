@@ -5,13 +5,6 @@ from players import *
 
 
 def main():
-    """Main method used to call the other classes"""
-    """
-    player1 = Historian(2)
-    player2 = MostCommon()
-    game = ManyGames(player1, player2, 100)
-    game.play_tournament()
-    """
     menu()
 
 
