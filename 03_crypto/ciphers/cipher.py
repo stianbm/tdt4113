@@ -22,6 +22,7 @@ class Cipher:
 
     def verify(self, text, cipher_key):
         """Check if the encoded - then decoded text is the same as original"""
+        print('Type: ', self._type)
         print('Text: ', text)
         encoded = self.encode(text, cipher_key)
         print('Encoded: ', encoded)
