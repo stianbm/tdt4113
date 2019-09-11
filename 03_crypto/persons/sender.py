@@ -12,7 +12,4 @@ class Sender(Person):
 
     def operate_cipher(self, text):
         """Call the encode method of the algorithm"""
-        return self._cipher_algorithm.encode(text, self.get_cipher_key())
-
-    def get_type(self):
-        return self._type
+        return self._cipher_algorithm.encode(text, self._cipher_key())

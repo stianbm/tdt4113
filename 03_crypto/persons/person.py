@@ -8,6 +8,7 @@ class Person:
 
     _cipher_key = None
     _cipher_algorithm = None
+    _type = None
 
     def __init__(self, cipher_key, cipher_algorithm):
         self._cipher_key = cipher_key
@@ -23,3 +24,6 @@ class Person:
     @abstractmethod
     def operate_cipher(self, text):
         return text
+
+    def get_type(self):
+        return self._type
