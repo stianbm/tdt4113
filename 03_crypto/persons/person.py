@@ -18,10 +18,8 @@ class Person:
         self._cipher_key = key
 
     def get_cipher_key(self):
-        """Take another guess..."""
         return self._cipher_key
 
     @abstractmethod
     def operate_cipher(self, text):
-        """Use cipher_algorithm to either encode or decode message"""
         return text
