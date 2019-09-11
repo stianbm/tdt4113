@@ -25,7 +25,9 @@ class Multiplication(Cipher):
 
     def decode(self, text, cipher_key):
         """Shifts characters back to original place"""
-        return self.encode(text, modular_inverse(cipher_key, self._alphabet_size))
+        return self.encode(
+            text, modular_inverse(
+                cipher_key, self._alphabet_size))
 
     def generate_keys(self):
         """Generate valid keys"""
