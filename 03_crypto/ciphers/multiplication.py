@@ -37,3 +37,7 @@ class Multiplication(Cipher):
                 break
         print("Key: ", contestant)
         return contestant
+
+    def possible_keys(self):
+        """Probably not necessary to use more than size of alphabet"""
+        return [x for x in range(0, self._alphabet_size)]

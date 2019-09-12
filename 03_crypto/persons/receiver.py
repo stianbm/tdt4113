@@ -12,4 +12,6 @@ class Receiver(Person):
 
     def operate_cipher(self, text):
         """Call the decode method of the algorithm"""
-        return self._cipher_algorithm.decode(text, self._cipher_key)
+        decoded = self._cipher_algorithm.decode(text, self._cipher_key)
+        print('Decoded at receiver: ', decoded)
+        return decoded

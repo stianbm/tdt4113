@@ -22,11 +22,17 @@ class Unbreakable(Cipher):
         """Use the same keyword to shift characters back using Caesar"""
         new_cipher_key = ''
         for character in cipher_key:
-            #DUDE BRUK PARANTESER I OPPGAVETEKST PLS
+            #TODO DUDE BRUK PARANTESER I OPPGAVETEKST PLS
             new_cipher_key += chr(((self._alphabet_size -
                                     ord(character) -
                                     self._alphabet_start) %
                                    self._alphabet_size) +
                                   self._alphabet_start)
-        print("New cipher key: ", new_cipher_key)
         return self.encode(text, new_cipher_key)
+
+    def possible_keys(self):
+        keys = []
+        with open('english_words.txt') as file:
+            for line in file:
+                keys.append(line)
+        return keys

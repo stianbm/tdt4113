@@ -1,4 +1,6 @@
 """File contains the Affine encryption class"""
+from random import randint
+
 from ciphers.caesar import Caesar
 from ciphers.cipher import Cipher
 from ciphers.multiplication import Multiplication
@@ -24,8 +26,17 @@ class Affine(Cipher):
         """Use decode from Caesar, then Multiplication"""
         caesar = Caesar()
         decoded_text = caesar.decode(text, cipher_key[1])
-        print('DeCaesared: ', decoded_text)
         multiplication = Multiplication()
         decoded_text = multiplication.decode(decoded_text, cipher_key[0])
-        print('DeMultiplied: ', decoded_text)
         return decoded_text
+
+    def possible_keys(self):
+        caesar = Caesar()
+        multiplication = Multiplication()
+        multiplication_keys = multiplication.possible_keys()
+        caesar_keys = caesar.possible_keys()
+        keys = []
+        for key in multiplication_keys:
+            for c_key in caesar_keys:
+                keys.append((key, c_key))
+        return keys

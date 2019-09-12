@@ -15,7 +15,6 @@ class Person:
         self._cipher_algorithm = cipher_algorithm
 
     def set_cipher_key(self, key):
-        """Take a guess..."""
         self._cipher_key = key
 
     def get_cipher_key(self):
@@ -23,7 +22,11 @@ class Person:
 
     @abstractmethod
     def operate_cipher(self, text):
+        """Either encode or decode the text"""
         return text
 
     def get_type(self):
         return self._type
+
+    def set_cipher_algorithm(self, cipher_algorithm):
+        self._cipher_algorithm = cipher_algorithm
