@@ -35,3 +35,7 @@ class Cipher:
         print('NOT VERIFIED')
         print()
         return False
+
+    @abstractmethod
+    def possible_keys(self):
+        """Return all possible keys"""

@@ -25,3 +25,7 @@ class Caesar(Cipher):
         return self.encode(
             text, (self._alphabet_size - cipher_key) %
             self._alphabet_size)
+
+    def possible_keys(self):
+        """Possible keys are range(0, alphabet_length"""
+        return [x for x in range(0, self._alphabet_size)]

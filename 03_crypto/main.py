@@ -9,7 +9,7 @@ from ciphers.unbreakable import Unbreakable
 
 def main():
     """Main function to be run"""
-    text = 'PYTHON IS NOT DA BEST'
+    text = 'PYTHON IS A SNEK'
     key = 15
     caesar = Caesar()
     caesar.verify(text, key)
@@ -29,11 +29,7 @@ def main():
 
     rsa = RSA()
     public_key, private_key = rsa.generate_keys()
-    print('Public: ', public_key, ', Private: ', private_key)
-    encoded = rsa.encode_int(5, public_key)
-    print('Encoded: ', encoded)
-    decoded = rsa.decode_int(encoded, private_key)
-    print('Decoded: ', decoded)
+    rsa.verify(text, (public_key, private_key))
 
 
 if __name__ == "__main__":
