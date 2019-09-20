@@ -9,7 +9,7 @@ def test_function():
     sin_func = Function(sin)
     # print(exponential_func.execute(sin_func.execute(0)))
 
-    assert sin_func.execute(0) == 0
-    assert exponential_func.execute(sin_func.execute(0)) == 1
+    assert sin_func.execute(0, False) == 0
+    assert exponential_func.execute(sin_func.execute(0, False), False) == 1
 
     print('Function tested SUCCESSFULLY')
