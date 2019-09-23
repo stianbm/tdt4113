@@ -12,6 +12,9 @@ from persons.sender import Sender
 
 def main():
     """Main function to be run"""
+
+    test_ciphers()
+
     text = 'ENCODED'
     key = 3
     caesar = Caesar()
